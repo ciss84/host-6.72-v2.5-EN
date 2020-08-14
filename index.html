@@ -16,7 +16,7 @@
     document.cookie = "levelTemp=55";
     var ua = navigator.userAgent;
     var fwVersion = ua.substring(ua.indexOf("5.0 (") + 19, ua.indexOf(") Apple"));
-    if (fwVersion === "6.72" || fwVersion === "7.51"|| fwVersion === "8.00") {
+    if (fwVersion === "0; Win64; x64" || fwVersion === "6.72" || fwVersion === "7.51"|| fwVersion === "8.00") {
       var i = 0;
       var msg = "Toutes nos félicitations! Nous avons détecté que votre PlayStation 4 fonctionne sous FW " + fwVersion + ", qui est compatible avec PS4HostCS";
       window.applicationCache.ondownloading = function () {
@@ -47,7 +47,7 @@
   </script>
   <script src="assets/js/functions.js"></script>
   <script>function print() { }</script>
-  <script src="common/exploit.js"></script>
+  <script src="common/exploit.js"></script>  
   <header id="header">
     <div class="content-title">
       <h1 id="title">Jailbreak Fw 6.72</h1>
@@ -67,7 +67,7 @@
         <ul class="submenu" id="submenu1">
           <!--<li><a href="#" id="mirahen" class="submenua" onclick="load_mira(); return false">Mira+HEN</a></li>-->
           <li><a href="#" id="mirahen" class="submenua" onclick="load_mira(); return false">Mirahen By Mugiwara</a></li>
-          <li><a href="#" id="hen215" onclick="inject_payload('hen215'); return false">Hen 2.1.5 By Mugiwara</a></li>           
+          <li><a href="#" id="hen217" onclick="inject_payload('hen217'); return false">Hen 2.1.7 By Mugiwara</a></li>           
           <li><a href="#" id="hen213" onclick="inject_payload('hen213'); return false">Hen 2.1.3</a></li>         
         </ul>
       </li>
@@ -92,13 +92,14 @@
           <li><a href="#" id="ftp" onclick="inject_payload('ftp'); return false">FTP VTX</a></li>                 
           <li><a href="#" id="dumperkernel" onclick="inject_payload('dumperKernel'); return false">Dumper kernel</a></li>
           <li><a href="#" id="kernelclock" onclick="inject_payload('kernelClock'); return false">Dumper Clock kernel</a></li>
-          <li><a href="#" id="dumper2" onclick="inject_payload('dumper2'); return false">Dumper Games v1.8</a></li>
-          <li><a href="#" id="dumper1" onclick="inject_payload('dumper1'); return false">Dumper Games v1.8 v1</a></li>       
-          <li><a href="#" id="dumper" onclick="inject_payload('dumper'); return false">Dumper Games v1.8 v2</a></li>                                                  
+          <li><a href="#" id="dumper2" onclick="inject_payload('dumper2'); return false">Dumper Gamesv1.8</a></li>
+          <li><a href="#" id="dumper1" onclick="inject_payload('dumper1'); return false">Dumper Gamesv1.9</a></li>       
+          <li><a href="#" id="dumper" onclick="inject_payload('dumper'); return false">Dumper Gamesv2</a></li>                                                  
         </ul>
       </li>
       <li id="li5"><a href="#" class="deroulant" id="deroulant5">Blocker</a>
         <ul class="submenu" id="submenu5">
+          <li><a href="index.html" id="index">Update cach</a></li> 
           <li><a href="#" id="enabler" onclick="inject_payload('desabler'); return false">Activate Update</a></li>
           <li><a href="#" id="desabler" onclick="inject_payload('enabler'); return false">Désactivate Update</a></li>         
         </ul>
@@ -192,7 +193,8 @@ function Populate() {
 	txt += "USER NAME : "+"<input tabIndex='-1' type='input' id='user' value='Mugiwara' onmousemove='savename()'>"+"<br>";
 	txt += "PS4 FTP IP : "+"<input tabIndex='-1' type='myip' id='myip' value='0.0.0.0:1337' onmousemove='saveip()'>"+"<br><br>";
 	if (navigator.userAgent.substring(navigator.userAgent.indexOf("5.0 (") + 19, navigator.userAgent.indexOf(") Apple")).includes("8.00")) {txt += "Hen Enabled : " + "<span style='color:lime'> true </span>" + "<br>";} else {txt += "Hen Enabled : " + "<span style='color:red'> false </span>" + "<br>";}
-  if (navigator.userAgent.substring(navigator.userAgent.indexOf("5.0 (") + 19, navigator.userAgent.indexOf(") Apple")).includes("8.00")) {txt += "Spoof Enabled: " + "<span style='color:lime'> true </span>" + "<br>";} else {txt += "Spoof Enabled : " + "<span style='color:red'> false </span>" + "<br>";}
+  if (navigator.userAgent.substring(navigator.userAgent.indexOf("5.0 (") + 19, navigator.userAgent.indexOf(") Apple")).includes("8.00")) {txt += "Spoof 8.00 Enabled: " + "<span style='color:lime'> true </span>" + "<br>";} else {txt += "Spoof 8.00 Enabled : " + "<span style='color:red'> false </span>" + "<br>";}
+  if (navigator.userAgent.substring(navigator.userAgent.indexOf("5.0 (") + 19, navigator.userAgent.indexOf(") Apple")).includes("7.51")) {txt += "Spoof 7.51 Enabled: " + "<span style='color:lime'> true </span>" + "<br>";} else {txt += "Spoof 7.51 Enabled : " + "<span style='color:red'> false </span>" + "<br>";}
 	if (truefw === "spoofed") { txt += "True Firmware : " + "<span style='color:red'>" + truefw + "</span>" + "<br>";} else { txt += "True Firmware : " + "<span style='color:lime'>" + truefw + "</span>" + "<br>";}
 	if (navigator.onLine == false) { txt += "Lan/WiFi Enabled : " + "<span style='color:red'> false </span>" + "<br>";} else { txt += "Lan/WiFi Enabled : " + "<span style='color:lime'> true </span>" + "<br>";}
 	if (navigator.cookieEnabled === false) { txt += "Cookie Tracking : " + "<span style='color:red'> false </span>" + "<br>";} else { txt += "Cookie Tracking : " + "<span style='color:lime'> true </span>" + "<br>";}
@@ -216,7 +218,13 @@ function Populate() {
 	fw.style.color = "yellow";
 	fw.onclick = function(){pop();
 	document.getElementById('Ttitle').innerHTML='NOTIFICATION:';
-	document.getElementById('Tsubtitle').innerHTML='OFW VERSION SPOOFED';};		
+	document.getElementById('Tsubtitle').innerHTML='OFW VERSION SPOOFED';};
+	} else if (fw.innerHTML.includes("7.51")) {
+	fw.innerHTML = ("Spoof detected");
+	fw.style.color = "yellow";
+	fw.onclick = function(){pop();
+	document.getElementById('Ttitle').innerHTML='NOTIFICATION:';
+	document.getElementById('Tsubtitle').innerHTML='OFW VERSION SPOOFED';};			
 	} else if (fw.innerHTML.includes("Mozilla")) {
 	fw.innerHTML = ("No PS4 detected"); 
 	fw.style.color = "red";
